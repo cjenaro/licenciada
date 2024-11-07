@@ -15,4 +15,9 @@ class Patient extends Model
   {
     return $this->hasMany(Measurement::class);
   }
+
+  public function admin()
+  {
+    return $this->belongsTo(User::class);
+  }
 }
