@@ -16,5 +16,5 @@ return [
     'dashboard' => 'Tablero',
     'profile' => 'Perfil',
     'logout' => 'Cerrar sesión',
-
+    'patient' => 'Patient',
 ];

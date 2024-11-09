@@ -1,4 +1,4 @@
-@prop(['header' => true])
+@props(['header' => true])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
