@@ -2,7 +2,7 @@
 
   <section class="flex flex-col md:flex-row bg-foreground container mx-auto rounded-lg overflow-hidden">
     <div class="p-10 flex-1 basis-[65%] self-end">
-      <p class="mb-2 text-black/90">Licenciada</p>
+      <p class="mb-2 text-black/90">Licenciada en Nutricion</p>
       <h1 class="text-6xl font-title text-black">Agustina Somerfeld</h1>
       <a href="#contact" class="p-4 uppercase font-bold bg-background rounded-lg text-lg mt-8 text-black block w-fit">Contactame</a>
     </div>

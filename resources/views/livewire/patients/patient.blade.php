@@ -11,30 +11,41 @@ state(['p' => fn($patient) => Patient::find($patient)]);
 <div>
   <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg dark:text-white/90 p-6">
     <div class="px-4 py-6 sm:px-6">
-      <h3 class="text-base/7 font-semibold text-gray-900 dark:text-gray-100">Patient Information</h3>
-      <p class="mt-1 max-w-2xl text-sm/6 text-gray-500 dark:text-gray-300">Personal details and application.</p>
+      <h3 class="text-base/7 font-semibold text-gray-900 dark:text-gray-100">{{ __('patients.patient_information') }}</h3>
+      <p class="mt-1 max-w-2xl text-gray-500 dark:text-gray-300">{{ __('patients.personal_details') }}</p>
     </div>
     <div class="border-t border-gray-100 dark:border-gray-600">
       <dl class="divide-y divide-gray-100 dark:divide-gray-600">
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 items-center">
           <dt class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ __('patients.name') }}</dt>
-          <dd class="mt-1 text-sm/6 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">{{ $p->name }}</dd>
+          <dd class="mt-1 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">
+            <livewire:components.inline-form field="name" :value="$p->name" :model="$p" />
+          </dd>
         </div>
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 items-center">
           <dt class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ __('patients.email') }}</dt>
-          <dd class="mt-1 text-sm/6 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">{{ $p->email }}</dd>
+          <dd class="mt-1 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">
+            <livewire:components.inline-form field="email" :value="$p->email" :model="$p" />
+          </dd>
         </div>
         <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ __('patients.date_of_birth') }}</dt>
-          <dd class="mt-1 text-sm/6 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">{{ $p->date_of_birth }}</dd>
+          <dd class="mt-1 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">
+            <livewire:components.inline-form field="date_of_birth" :value="$p->date_of_birth" :model="$p" input_type="date" />
+          </dd>
         </div>
         <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ __('patients.phone_number') }}</dt>
-          <dd class="mt-1 text-sm/6 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">{{ $p->phone_number }}</dd>
+          <dd class="mt-1 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">
+            <livewire:components.inline-form field="phone_number" :value="$p->phone_number" :model="$p" input_type="number" />
+          </dd>
+          </dd>
         </div>
         <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-900 dark:text-gray-100">{{__('patients.gender')}}</dt>
-          <dd class="mt-1 text-sm/6 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">{{ $p->gender }}</dd>
+          <dd class="mt-1 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">
+            <livewire:components.inline-form field="gender" :value="$p->gender" :model="$p" input_type="radio" :options="['M', 'F']" />
+          </dd>
         </div>
         <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm/6 font-medium text-gray-900 dark:text-gray-100">{{__('patients.attachments')}}</dt>
@@ -51,7 +62,7 @@ state(['p' => fn($patient) => Patient::find($patient)]);
                   </div>
                 </div>
                 <div class="ml-4 shrink-0">
-                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">{{ __('patients.download') }}</a>
+                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500  dark:text-indigo-300">{{ __('patients.download') }}</a>
                 </div>
               </li>
               <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm/6">
@@ -65,7 +76,7 @@ state(['p' => fn($patient) => Patient::find($patient)]);
                   </div>
                 </div>
                 <div class="ml-4 shrink-0">
-                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">{{ __('patients.download') }}</a>
+                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-300">{{ __('patients.download') }}</a>
                 </div>
               </li>
             </ul>
