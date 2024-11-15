@@ -17,4 +17,5 @@ return [
     'profile' => 'Perfil',
     'logout' => 'Cerrar sesión',
     'patient' => 'Patient',
+    'add_measurement' => 'Agregar Medidas',
 ];

@@ -17,5 +17,5 @@ return [
     'profile' => 'Profile',
     'logout' => 'Log Out',
     'patient' => 'Patient',
-
+    'add_measurement' => 'Add Measurement',
 ];

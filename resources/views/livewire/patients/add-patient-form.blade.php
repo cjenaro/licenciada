@@ -2,7 +2,7 @@
 
 use App\Livewire\Forms\PatientForm;
 
-use function Livewire\Volt\{form, state};
+use function Livewire\Volt\{form};
 
 form(PatientForm::class);
 

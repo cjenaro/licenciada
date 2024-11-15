@@ -19,6 +19,19 @@ Route::view('patients/{patient}', 'patients.patient')
   ->middleware(['auth'])
   ->name('patient');
 
+// New Measurement
+Route::view('patients/{patient}/measurement', 'patients.measurement')
+  ->middleware(['auth'])
+  ->name('measurement');
+
+// Measurement
+Route::get('patients/{patient}/measurements', function (App\Models\Patient $patient) {
+    return view('patients.measurements', [
+        'patient' => $patient,
+        'measurements' => $patient->measurements, 
+    ]);
+})->middleware(['auth'])->name('measurements');
+
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
